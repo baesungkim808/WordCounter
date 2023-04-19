@@ -44,4 +44,18 @@ public class Counter {
 	public int getCharacters() {
 		return this.characters;
 	}
+	
+	/**
+	 * Prints the number of words found.
+	 */
+	public void printWords() {
+		System.out.println("Words: " + this.words);
+	}
+	
+	/**
+	 * Prints the number of characters found.
+	 */
+	public void printCharacters() {
+		System.out.println("Characters: " + this.characters);
+	}
 }
