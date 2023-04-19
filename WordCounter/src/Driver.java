@@ -13,13 +13,14 @@ public class Driver {
 		
 		try (BufferedReader br = Files.newBufferedReader(inputFile)) {
 			while ((line = br.readLine()) != null) {
-				counter.addWords(line);
+				counter.read(line);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println(counter.getWords());
+		System.out.println("Words: " + counter.getWords());
+		System.out.println("Characters: " + counter.getCharacters());
 	}
 
 }
