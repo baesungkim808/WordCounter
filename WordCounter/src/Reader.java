@@ -19,8 +19,10 @@ public class Reader {
 			while ((this.line = br.readLine()) != null) {
 				this.counter.read(this.line);
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		}
+		catch (IOException e) {
+			System.err.println(this.file.toString() + " is not a valid file.");
+			System.exit(0);
 		}
 	}
 }

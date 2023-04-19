@@ -1,3 +1,4 @@
+import java.util.regex.PatternSyntaxException;
 
 public class Counter {
 	/** Regular expression to split strings on whitespace. */
@@ -25,7 +26,13 @@ public class Counter {
 	}
 
 	public void addWords(String line) {
-		this.words += line.split(SPLIT_REGEX).length;
+		try {
+			this.words += line.split(SPLIT_REGEX).length;
+		}
+		catch (PatternSyntaxException e) {
+			System.err.println(SPLIT_REGEX + " is an invalid regular expression.");
+			System.exit(0);
+		}
 	}
 	
 	public void addCharacters(String line) {
