@@ -1,6 +1,7 @@
 
 /**
- * Main class responsible for running this program.
+ * Main class responsible for running this program. Counts the number of words, characters, sentences, and lines 
+ * in a given file.
  * 
  * @author baesungkim
  *
