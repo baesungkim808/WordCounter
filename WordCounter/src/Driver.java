@@ -7,16 +7,19 @@ import java.nio.file.Paths;
 public class Driver {
 
 	public static void main(String[] args) {
+		Counter counter = new Counter();
 		Path inputFile = Paths.get(args[0]);
 		String line;
 		
 		try (BufferedReader br = Files.newBufferedReader(inputFile)) {
 			while ((line = br.readLine()) != null) {
-				System.out.println(line);
+				counter.addWords(line);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println(counter.getWords());
 	}
 
 }
