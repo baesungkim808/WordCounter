@@ -7,6 +7,7 @@ public class Driver {
 		reader.read();
 		counter.printWords();
 		counter.printCharacters();
+		counter.printSentences();
 	}
 
 }
