@@ -72,6 +72,7 @@ public class Counter {
 	private void addSentences(String line) {
 		for (int i = 0; i < line.length(); i++) {
 			char c = line.charAt(i);
+			
 			// a sentence ends with a period, question mark, or exclamation mark
 			if (c == '.' || c == '?' || c == '!') {
 				this.sentences++;
@@ -107,21 +108,21 @@ public class Counter {
 	}
 	
 	/**
-	 * Prints the total number of words found.
+	 * Outputs the total number of words found.
 	 */
 	public void printWords() {
 		System.out.println("Words: " + this.words);
 	}
 	
 	/**
-	 * Prints the total number of characters found.
+	 * Outputs the total number of characters found.
 	 */
 	public void printCharacters() {
 		System.out.println("Characters: " + this.characters);
 	}
 	
 	/**
-	 * Prints the total number of sentences found.
+	 * Outputs the total number of sentences found.
 	 */
 	public void printSentences() {
 		System.out.println("Sentences: " + this.sentences);
