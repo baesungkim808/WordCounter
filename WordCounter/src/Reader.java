@@ -17,14 +17,14 @@ public class Reader {
 	/** Represents each line in the file. */
 	private String line;
 	
-	/** Counter object for adding up the number of words, characters, and sentences in each line. */
+	/** Counter object to read each line in the file. */
 	private Counter counter;
 	
 	/**
 	 * Initializes this Reader.
 	 * 
 	 * @param file the file to be read
-	 * @param counter Counter object for adding up the number of words, characters, and sentences in each line
+	 * @param counter Counter object to read each line in the file
 	 */
 	public Reader(String file, Counter counter) {
 		this.file = Paths.get(file);

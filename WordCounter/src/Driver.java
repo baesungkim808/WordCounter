@@ -20,10 +20,11 @@ public class Driver {
 			// add up the number of words, characters, and sentences in the file
 			reader.read();
 			
-			// output number of words, characters, and sentences found
+			// output number of words, characters, sentences, and lines found
 			counter.printWords();
 			counter.printCharacters();
 			counter.printSentences();
+			counter.printLines();
 		}
 		// if no command-line argument is given, no file is available for processing
 		catch (ArrayIndexOutOfBoundsException e) {

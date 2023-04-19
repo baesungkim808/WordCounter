@@ -1,7 +1,7 @@
 import java.util.regex.PatternSyntaxException;
 
 /**
- * Reads strings and counts the number of words, characters, and sentences found.
+ * Reads strings and counts the number of words, characters, sentences, and lines found.
  * 
  * @author baesungkim
  *
@@ -19,6 +19,9 @@ public class Counter {
 	/** Number of sentences. */
 	private int sentences;
 	
+	/** Number of lines. */
+	private int lines;
+	
 	/**
 	 * Initializes this Counter.
 	 */
@@ -26,11 +29,12 @@ public class Counter {
 		this.words = 0;
 		this.characters = 0;
 		this.sentences = 0;
+		this.lines = 0;
 	}
 	
 	/**
 	 * Adds the number of words, characters, and sentences in the given string 
-	 * to their respective totals.
+	 * to their respective totals. Increments the current total number of lines.
 	 * 
 	 * @param line the string to process
 	 */
@@ -38,6 +42,7 @@ public class Counter {
 		addWords(line);
 		addCharacters(line);
 		addSentences(line);
+		addLines(line);
 	}
 
 	/**
@@ -81,6 +86,15 @@ public class Counter {
 	}
 	
 	/**
+	 * Increments the current total number of lines.
+	 * 
+	 * @param line the string to process
+	 */
+	private void addLines(String line) {
+		this.lines++;
+	}
+	
+	/**
 	 * Returns the total number of words found.
 	 * 
 	 * @return the total number of words
@@ -108,6 +122,15 @@ public class Counter {
 	}
 	
 	/**
+	 * Returns the total number of lines found.
+	 * 
+	 * @return the total number of lines
+	 */
+	public int getLines() {
+		return this.lines;
+	}
+	
+	/**
 	 * Outputs the total number of words found.
 	 */
 	public void printWords() {
@@ -126,5 +149,12 @@ public class Counter {
 	 */
 	public void printSentences() {
 		System.out.println("Sentences: " + this.sentences);
+	}
+	
+	/**
+	 * Outputs the total number of lines found.
+	 */
+	public void printLines() {
+		System.out.println("Lines: " + this.lines);
 	}
 }
