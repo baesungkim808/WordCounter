@@ -1,5 +1,11 @@
 import java.util.regex.PatternSyntaxException;
 
+/**
+ * Reads strings and counts the number of words, characters, and sentences found.
+ * 
+ * @author baesungkim
+ *
+ */
 public class Counter {
 	/** Regular expression to split strings on whitespace. */
 	private static final String SPLIT_REGEX = "\\s+";
@@ -13,19 +19,33 @@ public class Counter {
 	/** Number of sentences. */
 	private int sentences;
 	
+	/**
+	 * Initializes this Counter.
+	 */
 	public Counter() {
 		this.words = 0;
 		this.characters = 0;
 		this.sentences = 0;
 	}
 	
+	/**
+	 * Adds the number of words, characters, and sentences in the given string 
+	 * to their respective totals.
+	 * 
+	 * @param line the string to process
+	 */
 	public void read(String line) {
 		addWords(line);
 		addCharacters(line);
 		addSentences(line);
 	}
 
-	public void addWords(String line) {
+	/**
+	 * Adds the number of words in the given string to the current total.
+	 * 
+	 * @param line the string to process
+	 */
+	private void addWords(String line) {
 		try {
 			this.words += line.split(SPLIT_REGEX).length;
 		}
@@ -35,13 +55,24 @@ public class Counter {
 		}
 	}
 	
-	public void addCharacters(String line) {
+	/**
+	 * Adds the number of characters in the given string to the current total.
+	 * 
+	 * @param line the string to process
+	 */
+	private void addCharacters(String line) {
 		this.characters += line.length();
 	}
 	
-	public void addSentences(String line) {
+	/**
+	 * Adds the number of sentences in the given string to the current total.
+	 * 
+	 * @param line the string to process
+	 */
+	private void addSentences(String line) {
 		for (int i = 0; i < line.length(); i++) {
 			char c = line.charAt(i);
+			// a sentence ends with a period, question mark, or exclamation mark
 			if (c == '.' || c == '?' || c == '!') {
 				this.sentences++;
 			}
@@ -49,48 +80,48 @@ public class Counter {
 	}
 	
 	/**
-	 * Returns the number of words found.
+	 * Returns the total number of words found.
 	 * 
-	 * @return the number of words
+	 * @return the total number of words
 	 */
 	public int getWords() {
 		return this.words;
 	}
 	
 	/**
-	 * Returns the number of characters found.
+	 * Returns the total number of characters found.
 	 * 
-	 * @return the number of characters
+	 * @return the total number of characters
 	 */
 	public int getCharacters() {
 		return this.characters;
 	}
 	
 	/**
-	 * Returns the number of sentences found.
+	 * Returns the total number of sentences found.
 	 * 
-	 * @return the number of sentences
+	 * @return the total number of sentences
 	 */
 	public int getSentences() {
 		return this.sentences;
 	}
 	
 	/**
-	 * Prints the number of words found.
+	 * Prints the total number of words found.
 	 */
 	public void printWords() {
 		System.out.println("Words: " + this.words);
 	}
 	
 	/**
-	 * Prints the number of characters found.
+	 * Prints the total number of characters found.
 	 */
 	public void printCharacters() {
 		System.out.println("Characters: " + this.characters);
 	}
 	
 	/**
-	 * Prints the number of sentences found.
+	 * Prints the total number of sentences found.
 	 */
 	public void printSentences() {
 		System.out.println("Sentences: " + this.sentences);
